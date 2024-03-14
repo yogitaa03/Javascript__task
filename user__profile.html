@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="user__profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="user__profile.js" defer></script>
+    <title>UserProfile</title>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header__left">
+            <img src="contentder__image.jpg" class="header__left__image">
+            <p class="header__left__topic"><b>contentder</b></p>
+        </div>
+        <div class="header__right">
+            <nav class="header__right__navigation">
+                <div>Templates</div>
+            </nav>
+            <nav class="header__right__navigation">
+                <div>Features</div>
+            </nav>
+            <nav class="header__right__navigation">
+                <div>Subscription</div>
+            </nav>
+            <nav class="header__right__navigation">
+                <div>Support</div>
+            </nav>
+            <button type="button" class="header__right__button" id="header__button" onclick="loginButton()">LOGIN</button>
+        </div>
+        <div class="login" id="login">
+            <form action="" class="login__form" id="login__form">
+                <img src="login__image.jpg" class="login__form__image">
+                <img src="wrong__image.png" class="login__form__cross" id="login__cross" onclick="loginCancel()">
+                <div class="login__form__authentication">
+                    <input type="text" class="login__form__authentication__input" id="Username" placeholder="Username">
+                    <div class="login__form__authentication__uerror"></div>
+                </div>
+                <div class="login__form__authentication">
+                    <input type="password" class="login__form__authentication__input" id="Password" placeholder="Password">
+                    <div class="login__form__authentication__perror"></div>
+                </div>
+                <button class="login__button" id="login__button" onclick="loginSuccess()">login</button>
+            </form>
+            <div class="login__success" id="login__success">
+                <img src="tick__image.jpg" class="login__success__image">
+                <div class="login__success__message"><b>Successfully logged in. Now close this window</b></div>
+                <img src="wrong__image.png" class="login__success__cross" id="login__success__cross" onclick="loginSuccessCancel()">
+            </div>
+        </div>
+    </header>
+    <div class="maincontainer" id="maincontainer">
+        <div class="maincontainer__header">
+            <h2 class="maincontainer__header__title">Contentder Experts</h2>
+        </div>
+        <div class="maincontainer__middle" id="maincontainer__middle">
+            <div class="maincontainer__middle__form">
+                <img src="search__image.png" class="form__searchimg">
+                <input type="text" placeholder="Search profiles..." class="form__search" id="form__search" onkeyup="profileSearch()">
+                <button class="form__button" id="addNewButton" onclick="addNew()">+ Add New</button>
+            </div>
+        </div>
+        <form class="addNewForm" id="addNewForm">
+            <div class="addNewForm__popup" id="addNewForm__popup">
+                <img src="addnew__image.png" class="addNewForm__popup__image" id="addNewForm__popup__image">
+                <img src="wrong__image.png" class="addNewForm__popup__wrong" id="addNewForm__popup__wrong" onclick="addNewCancel()">
+                <input type="url" class="addNewForm__popup__entries" placeholder="Image__URL" id="addNewForm__popup__url">
+                <input type="text" class="addNewForm__popup__entries" placeholder="Username" id="addNewForm__popup__name">
+                <input type="text" class="addNewForm__popup__entries" placeholder="Country" id="addNewForm__popup__country">
+                <input type="text" class="addNewForm__popup__entries" placeholder="Ratings" id="addNewForm__popup__rating">
+                <button class="addNewForm__popup__button" id="addNew__members" onclick="addNewMember()">Add Member</button> 
+            </div>
+        </form>
+        <div class="maincontainer__bottom">
+            <div class="search__error" id="search__error">
+                <h2>Search is not found</h2>
+            </div>
+            <div class="grid" id="grid">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
