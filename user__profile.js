@@ -72,7 +72,7 @@ const listValue = (gridData) => {
     for (let i = 0; i < gridData.length; i++) {
         counter++;
         grid__list.innerHTML += `
-        <div class='grid__element' id=grid__element${counter}>
+        <div class='grid__element'>
         <img src=${gridData[i].Img_URL} class="grid__element__img">
         <p class="grid__element__name" id=grid__img__name>${gridData[i].name}</p>
         <p class="grid__element__country">${gridData[i].country}</p>
