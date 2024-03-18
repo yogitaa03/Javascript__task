@@ -293,7 +293,7 @@ body {
   box-shadow: 5px 5px 5px rgb(233, 230, 230);
   outline: none;
   border: none;
-  font-size: 20px;
+  font-size: 15px;
 }
 .addNewForm .addNewForm__popup .addNewForm__popup__entries:hover {
   border-bottom: 2px solid black;
