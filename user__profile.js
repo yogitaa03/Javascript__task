@@ -128,9 +128,7 @@ function fullForm(e) {
         addNewForm.style.display = 'flex';
         finishButton = function addNewMember() {
             let add = { Img_URL: user__img.value, name: user__name.value, country: user__country.value, rating: user__rating.value }
-            add.id = data.length
             data.push(add);
-            console.log(data)
             listValue(data);
             addNewForm.style.display = 'none';
             event.preventDefault();
