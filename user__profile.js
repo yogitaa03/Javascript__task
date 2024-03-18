@@ -68,6 +68,7 @@ let data = [
 
 let counter = 0;
 const listValue = (gridData) => {
+    counter = 0
     grid__list.innerHTML = ""
     for (let i = 0; i < gridData.length; i++) {
         counter++;
@@ -76,7 +77,11 @@ const listValue = (gridData) => {
         <img src=${gridData[i].Img_URL} class="grid__element__img">
         <p class="grid__element__name" id=grid__img__name>${gridData[i].name}</p>
         <p class="grid__element__country">${gridData[i].country}</p>
-        <div class="grid__element__rating" id=grid__rating${counter}>
+        <div class="grid__element__rating" id=grid__rating${counter}></div>
+        <div class="grid__element__button">
+        <button class=grid__button id=grid__update${counter} onclick="fullForm(this); cardUpdate(${i})">Update</button>
+        <button class=grid__button id=grid__remove${counter} onclick="cardRemove(${i})">Remove</button>
+        </div>
         </div>`
 
         const grid__rating = document.getElementById(`grid__rating${counter}`)
@@ -84,7 +89,6 @@ const listValue = (gridData) => {
         generateStar(rate, grid__rating)
 
     };
-    counter = 0;
 }
 listValue(data);
 
@@ -117,4 +121,47 @@ function profileSearch() {
         grid__list.style.display = 'grid';
         listValue(dataFilter);
     }
+}
+
+function fullForm(e) {
+    if (e.id === "addNewButton") {
+        addNewForm.style.display = 'flex';
+        finishButton = function addNewMember() {
+            let add = { Img_URL: user__img.value, name: user__name.value, country: user__country.value, rating: user__rating.value }
+            add.id = data.length
+            data.push(add);
+            console.log(data)
+            listValue(data);
+            addNewForm.style.display = 'none';
+            event.preventDefault();
+            addNewForm.reset();
+        }
+    }
+    else {
+        cardUpdate = function formUpdate(index) {
+
+            addNewForm.style.display = 'flex';
+            let updateArr = data.at(index)
+            addNewForm.querySelector("#addNewForm__popup__url").value = updateArr.Img_URL
+            addNewForm.querySelector("#addNewForm__popup__name").value = updateArr.name
+            addNewForm.querySelector("#addNewForm__popup__country").value = updateArr.country
+            addNewForm.querySelector("#addNewForm__popup__rating").value = updateArr.rating
+
+            finishButton = function memUpdate() {
+                let updateFilter = { Img_URL: user__img.value, name: user__name.value, country: user__country.value, rating: user__rating.value }
+                data[index] = updateFilter
+                listValue(data)
+                addNewForm.style.display = 'none';
+                event.preventDefault()
+            }
+            event.preventDefault()
+
+        }
+
+    }
+
+}
+function cardRemove(id) {
+    data.splice(id, 1)
+    listValue(data)
 }

@@ -241,6 +241,28 @@ body {
   font-size: 17px;
   letter-spacing: 4px;
 }
+.grid .grid__element .grid__element__button {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+.grid .grid__element .grid__element__button .grid__button {
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  background-color: #5f6efa;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  box-shadow: 5px 5px 5px rgb(233, 230, 230);
+}
+.grid .grid__element .grid__element__button .grid__button:hover {
+  cursor: pointer;
+}
+.grid .grid__element:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 40px #858bbe;
+}
 
 .addNewForm {
   width: 100%;
@@ -271,6 +293,7 @@ body {
   box-shadow: 5px 5px 5px rgb(233, 230, 230);
   outline: none;
   border: none;
+  font-size: 20px;
 }
 .addNewForm .addNewForm__popup .addNewForm__popup__entries:hover {
   border-bottom: 2px solid black;

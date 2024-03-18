@@ -283,7 +283,31 @@ body {
             letter-spacing: 4px;
         }
 
+        .grid__element__button {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 10px;
 
+            .grid__button {
+                width: 70px;
+                height: 30px;
+                text-align: center;
+                background-color: colors.$navigation-color-5f6efa;
+                border-radius: 10px;
+                border: none;
+                color: colors.$bg-color-white;
+                box-shadow: 5px 5px 5px rgb(233, 230, 230);
+
+            }
+            .grid__button:hover{
+                cursor: pointer;
+            }
+        }
+
+    }
+    .grid__element:hover{
+        cursor: pointer;
+        box-shadow: 5px 5px 40px #858bbe;
     }
 
 }
@@ -318,6 +342,7 @@ body {
             box-shadow: 5px 5px 5px rgb(233, 230, 230);
             outline: none;
             border: none;
+            font-size: 20px;
         }
 
         .addNewForm__popup__entries:hover {
