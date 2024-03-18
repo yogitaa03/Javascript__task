@@ -147,7 +147,7 @@ function fullForm(e) {
             addNewForm.querySelector("#addNewForm__popup__country").value = updateArr.country
             addNewForm.querySelector("#addNewForm__popup__rating").value = updateArr.rating
 
-            finishButton = function memUpdate() {
+            finishButton = function memberUpdate() {
                 let updateFilter = { Img_URL: user__img.value, name: user__name.value, country: user__country.value, rating: user__rating.value }
                 data[index] = updateFilter
                 listValue(data)
