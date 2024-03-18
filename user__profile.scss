@@ -293,12 +293,12 @@ body {
                 border-radius: 10px;
                 border: none;
                 color: variables.$color-white;
-                box-shadow: 5px 5px 5px variables.$input-shadow-color;
-
             }
 
             .grid__button:hover {
                 cursor: pointer;
+                box-shadow: 0 5px 10px #6572e8;
+
             }
         }
 
@@ -306,7 +306,8 @@ body {
 
     .grid__element:hover {
         cursor: pointer;
-        box-shadow: 5px 5px 40px #858bbe;
+        // box-shadow: inset 5px 5px 5px #535db5,5px 5px 5px #535db5; 
+        border: 4px solid #727cd8;
     }
 
 }
@@ -338,14 +339,15 @@ body {
             margin: 10px 0 30px 80px;
             width: variables.$wid-px-450;
             height: variables.$height-px-40;
-            box-shadow: 5px 5px 5px variables.$input-shadow-color;
+            box-shadow: 0 5px 5px variables.$input-shadow-color;
             outline: none;
             border: none;
             font-size: variables.$font-px-15;
+            padding-left: 10px;
         }
 
         .addNewForm__popup__entries:hover {
-            border-bottom: 2px solid black;
+            border-bottom: 1px solid black;
         }
 
         .addNewForm__popup__button {
